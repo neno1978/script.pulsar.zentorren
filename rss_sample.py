@@ -19,7 +19,7 @@ def _attr(node, path, attrib):
         return n.attrib.get(attrib)
 
 def search(query):
-    req = urllib2.Request("http://foo.bar/search/%s" % urllib.quote_plus(query))
+    req = urllib2.Request("http://zentorrents.palasaka.net/index.php?format=feed&amp;type=rss?q=%s" % urllib.quote_plus(query))
     req.add_header("User-Agent", USER_AGENT)
     response = urllib2.urlopen(req)
     root = ET.fromstring(response.read())
